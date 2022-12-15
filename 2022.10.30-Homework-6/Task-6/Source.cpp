@@ -2,50 +2,50 @@
 
 int main(int argc, char* argv[])
 {
-	int n = 0;
-	int cnt3 = 0;
-	int cnt4 = 0;
-	std::string yn = "";
+	int b = 0;
+	int c3 = 0;
+	int c4 = 0;
+	std::string r = "";
 
-	scanf_s("%d", &n);
+	scanf_s("%d", &b);
 
-	int* a = new int[n] {0};
-	int* three = new int[n] {0};
-	int* four = new int[n] {0};
+	int* a = new int[b] {0};
+	int* three = new int[b] {0};
+	int* four = new int[b] {0};
 
-	for (int i = 0; i < n; ++i)
+	for (int i = 0; i < b; ++i)
 	{
 		scanf_s("%d", &a[i]);
 
 		if (a[i] % 2 == 0)
 		{
-			four[cnt4] = a[i];
-			++cnt4;
+			four[c4] = a[i];
+			++c4;
 		}
 		else
 		{
-			three[cnt3] = a[i];
-			++cnt3;
+			three[c3] = a[i];
+			++c3;
 		}
 	}
 
-	for (int i = 0; i < cnt3; ++i)
+	for (int i = 0; i < c3; ++i)
 	{
 		std::cout << three[i] << " ";
 	}
 
 	std::cout << std::endl;
 
-	for (int i = 0; i < cnt4; ++i)
+	for (int i = 0; i < c4; ++i)
 	{
 		std::cout << four[i] << " ";
 	}
 
 	std::cout << std::endl;
 
-	yn = (cnt3 <= cnt4 ? "YES" : "NO");
+	r = (c3 <= c4 ? "YES" : "NO");
 
-	std::cout << yn;
+	std::cout << r;
 
 	delete[]a;
 

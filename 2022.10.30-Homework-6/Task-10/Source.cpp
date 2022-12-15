@@ -3,31 +3,31 @@
 int main(int argc, char* argv[])
 {
 	int n = 0;
-	int m = 0;
+	int k = 0;
 	int ma = 0;
 
-	scanf_s("%d%d", &n, &m);
+	std::cin >> n >> k;
 
 	int* a = new int[n] {0};
-	int* b = new int[m] {0};
+	int* b = new int[k] {0};
 
 	for (int i = 0; i < n; ++i)
 	{
-		scanf_s("%d", &a[i]);
+		std::cin >> a[i];
 
 		ma = (ma < a[i] ? a[i] : ma);
 	}
 
-	for (int i = 0; i < m; ++i)
+	for (int i = 0; i < k; ++i)
 	{
-		scanf_s("%d", &b[i]);
+		std::cin >> b[i];
 	}
 
 	int* c = new int[ma + 1] {0};
 
 	for (int i = 0; i < n; ++i)
 	{
-		for (int j = 0; j < m; ++j)
+		for (int j = 0; j < k; ++j)
 		{
 			c[a[i]] = (a[i] == b[j] ? ++c[a[i]] : c[a[i]]);
 		}

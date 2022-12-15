@@ -2,42 +2,42 @@
 
 int main(int argc, char* argv[])
 {
+	int b = 0;
+	int c = 0;
 	int n = 0;
-	int ma = 0;
-	int in = 0;
-	int im = 0;
+	int m = 0;
 	int mas = 0;
 	int su = 0;
 
-	scanf_s("%d", &n);
+	std::cin >> b;
 
-	int* a = new int[n] {0};
+	int* a = new int[b] {0};
 
-	for (int i = 0; i < n; i++)
+	for (int i = 0; i < b; i++)
 	{
-		scanf_s("%d", &a[i]);
+		std::cin >> a[i];
 	}
 
-	while (in < n)
+	while (n < b)
 	{
-		for (int i = 0; i < n - in; ++i)
+		for (int i = 0; i < b - n; ++i)
 		{
-			su += a[i + in];
+			su += a[i + n];
 
-			if (ma < a[i + in] * (i + 1) && a[i + in] * (i + 1) > su)
+			if (c < a[i + n] * (i + 1) && a[i + n] * (i + 1) > su)
 			{
-				ma = a[i + in] * (i + 1);
-				im = i + in;
+				c = a[i + n] * (i + 1);
+				m = i + n;
 			}
-			else if (ma < su)
+			else if (c < su)
 			{
-				ma = su;
-				im = i + in;
+				c = su;
+				m = i + n;
 			}
 		}
-		in = im + 1;
-		mas += ma;
-		ma = 0;
+		n = m + 1;
+		mas += c;
+		c = 0;
 		su = 0;
 	}
 

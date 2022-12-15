@@ -2,18 +2,18 @@
 
 int main(int argc, char* argv[])
 {
-	int n = 0;
+	int b = 0;
 	int mi = 100;
 	int ma = -100;
 	int su = 0;
 	int pro = 1;
 	int tru = 2;
 
-	scanf_s("%d", &n);
+	scanf_s("%d", &b);
 
-	int* a = new int[n] {0};
+	int* a = new int[b] {0};
 
-	for (int i = 0; i < n; ++i)
+	for (int i = 0; i < b; ++i)
 	{
 		scanf_s("%d", &a[i]);
 
@@ -22,7 +22,7 @@ int main(int argc, char* argv[])
 		su = (a[i] > 0 ? su + a[i] : su);
 	}
 
-	for (int i = 0; i < n && tru; ++i)
+	for (int i = 0; i < b && tru; ++i)
 	{
 		pro = (tru == 1 ? pro * a[i] : pro);
 		tru = ((a[i] == ma || a[i] == mi) ? --tru : tru);

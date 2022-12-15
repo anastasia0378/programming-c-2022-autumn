@@ -2,23 +2,23 @@
 
 int main(int argc, char* argv[])
 {
-	int n = 0;
-	int height = 0;
+	int b = 0;
+	int h = 0;
 
-	scanf_s("%d", &n);
+	std::cin >> b;
 
-	int* a = new int[n + 1] {0};
+	int* a = new int[b + 1] {0};
 
-	for (int i = 0; i < n; ++i)
+	for (int i = 0; i < b; ++i)
 	{
-		scanf_s("%d", &a[i]);
+		std::cin >> a[i];
 	}
 
-	scanf_s("%d", &height);
+	std::cin >> h;
 
-	for (int i = 0; i < n + 1; ++i)
+	for (int i = 0; i < b + 1; ++i)
 	{
-		if (height > a[i])
+		if (h > a[i])
 		{
 			std::cout << ++i;
 			break;

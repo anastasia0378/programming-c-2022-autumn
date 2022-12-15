@@ -2,18 +2,18 @@
 
 int main(int argc, char* argv[])
 {
-	int n = 0;
+	int b = 0;
 
-	scanf_s("%d", &n);
+	std::cin >> b;
 
-	int* a = new int[n] {0};
+	int* a = new int[b] {0};
 
-	for (int i = 0; i < n; ++i)
+	for (int i = 0; i < b; ++i)
 	{
-		scanf_s("%d", &a[i]);
+		std::cin >> a[i];
 	}
 
-	for (int i = n - 1; i >= 0; --i)
+	for (int i = b - 1; i >= 0; --i)
 	{
 		std::cout << a[i] << " ";
 	}

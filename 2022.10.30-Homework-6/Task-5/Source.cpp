@@ -3,8 +3,7 @@
 int main(int argc, char* argv[])
 {
 	int n = 0;
-	int k = 0;
-	int x = 0;
+	int l = 0;
 
 	scanf_s("%d", &n);
 
@@ -14,15 +13,15 @@ int main(int argc, char* argv[])
 	{
 		scanf_s("%d", &a[i]);
 
-		k = (a[i] < a[k] ? i : k);
+		l = (a[i] < a[l] ? i : l);
 	}
 
-	for (int i = k; i < n; i++)
+	for (int i = l; i < n; i++)
 	{
 		std::cout << a[i] << " ";
 	}
 
-	for (int i = 0; i < k; i++)
+	for (int i = 0; i < l; i++)
 	{
 		std::cout << a[i] << " ";
 	}

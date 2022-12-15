@@ -2,28 +2,28 @@
 
 int main(int argc, char* argv[])
 {
-	int n = 0;
-	int m = 0;
-	int l = 0;
+	int b = 0;
 	int r = 0;
+	int l = 0;
+	int k = 0;
 
-	scanf_s("%d", &n);
+	std::cin >> b;
 
-	int* a = new int[n] {0};
+	int* a = new int[b] {0};
 
-	for (int i = 0; i < n; ++i)
+	for (int i = 0; i < b; ++i)
 	{
-		scanf_s("%d", &a[i]);
+		std::cin >> a[i];
 	}
 
-	scanf_s("%d", &m);
+	std::cin >> r;
 
-	for (int i = 0; i < m; ++i)
+	for (int i = 0; i < r; ++i)
 	{
-		scanf_s("%d", &l);
-		scanf_s("%d", &r);
-
-		for (int j = l - 1; j < r; ++j)
+		std::cin >> l;
+		std::cin >> k;
+		 
+		for (int j = l - 1; j < k; ++j)
 		{
 			std::cout << a[j] << " ";
 		}
