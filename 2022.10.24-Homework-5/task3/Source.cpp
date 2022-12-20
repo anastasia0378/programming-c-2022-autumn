@@ -3,8 +3,9 @@
 int main(int argc, char* argv[])
 {
 	int n = 0;
-	int cnt = 0;
-	int num = 0;
+	int mi = 1000;
+	int ma = 0;
+	int t = 0;
 
 	std::cin >> n;
 
@@ -13,16 +14,15 @@ int main(int argc, char* argv[])
 	for (int i = 0; i < n; ++i)
 	{
 		std::cin >> a[i];
+		mi = (mi > a[i] ? a[i] : mi);
+		ma = (ma < a[i] ? a[i] : ma);
 	}
-
-	std::cin >> num;
 
 	for (int i = 0; i < n; ++i)
 	{
-		cnt = (num == a[i] ? ++cnt : cnt);
+		t = (a[i] == ma ? mi : a[i]);
+		std::cout << t << " ";
 	}
-
-	std::cout << cnt;
 
 	free(a);
 

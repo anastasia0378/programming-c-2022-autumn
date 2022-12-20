@@ -3,10 +3,7 @@
 int main(int argc, char* argv[])
 {
 	int n = 0;
-	int ma = -1000;
-	int index = 0;
-	int L = 0;
-	int R = 0;
+	int ma = 0;
 
 	std::cin >> n;
 
@@ -17,19 +14,15 @@ int main(int argc, char* argv[])
 		std::cin >> a[i];
 	}
 
-	std::cin >> L;
-	std::cin >> R;
-
-	for (int i = L - 1; i < R; ++i)
+	for (int i = 0; i < n + 2; ++i)
 	{
-		if (a[i] > ma)
+		if ((a[i % n] + a[(i + 1) % n] + a[(i + 2) % n]) > ma)
 		{
-			ma = a[i];
-			index = ++i;
+			ma = a[i % n] + a[(i + 1) % n] + a[(i + 2) % n];
 		}
 	}
 
-	std::cout << ma << " " << index;
+	std::cout << ma;
 
 	free(a);
 
