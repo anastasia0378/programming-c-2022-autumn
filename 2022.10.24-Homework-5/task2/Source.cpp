@@ -5,8 +5,8 @@ int main(int argc, char* argv[])
 	int n = 0;
 	int ma = -1000;
 	int index = 0;
-	int L = 0;
-	int R = 0;
+	int K = 0;
+	int T = 0;
 
 	std::cin >> n;
 
@@ -17,10 +17,10 @@ int main(int argc, char* argv[])
 		std::cin >> a[i];
 	}
 
-	std::cin >> L;
-	std::cin >> R;
+	std::cin >> K;
+	std::cin >> T;
 
-	for (int i = L - 1; i < R; ++i)
+	for (int i = K - 1; i < T; ++i)
 	{
 		if (a[i] > ma)
 		{
