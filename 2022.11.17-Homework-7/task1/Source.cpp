@@ -1,59 +1,68 @@
 #include<iostream>
 
+void del(int** arr, int n)
+{
+	for (int i = 0; i < n; ++i)
+	{
+		delete[] arr[i];
+	}
+	delete[] arr;
+}
+
 int main(int argc, char* argv[])
 {
-	int b = 0;
+	int n = 0;
 	int m = 0;
 
-	std::cin >> b >> m;
+	std::cin >> n >> m;
 
-	int** a = new int* [b];
-	int* s = new int[b] {0};
-	int* c = new int[m] {0};
+	int** a = new int* [n];
+	int* string = new int[n] {0};
+	int* column = new int[m] {0};
 
-	for (int i = 0; i < b; ++i)
+	for (int i = 0; i < n; ++i)
 	{
 		a[i] = new int[m] {0};
 	}
 
-	for (int i = 0; i < b; ++i)
+	for (int i = 0; i < n; ++i)
 	{
-		for (int k = 0; k < m; ++k)
+		for (int j = 0; j < m; ++j)
 		{
-			std::cin >> a[i][k];
+			std::cin >> a[i][j];
 
-			s[i] += a[i][k];
-			c[k] += a[i][k];
+			string[i] += a[i][j];
+			column[j] += a[i][j];
 		}
 	}
 
-	for (int i = 0; i < b; ++i)
+	for (int i = 0; i < n; ++i)
 	{
-		std::cout << s[i] << " ";
+		std::cout << string[i] << " ";
 	}
 
 	std::cout << std::endl;
 
 	for (int i = 0; i < m; ++i)
 	{
-		std::cout << c[i] << " ";
+		std::cout << column[i] << " ";
 	}
 
 	std::cout << std::endl << std::endl;
 
-	for (int i = 0; i < b; ++i)
+	for (int i = 0; i < n; ++i)
 	{
-		for (int k = 0; k < m; ++k)
+		for (int j = 0; j < m; ++j)
 		{
-			std::cout << a[i][k] << " ";
+			std::cout << a[i][j] << " ";
 		}
 
 		std::cout << std::endl;
 	}
 
-	delete[] a;
-	delete[] s;
-	delete[] c;
+	del(a, n);
+	delete[] string;
+	delete[] column;
 
 	return EXIT_SUCCESS;
 }
